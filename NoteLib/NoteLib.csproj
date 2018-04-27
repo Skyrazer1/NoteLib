@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addSongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addSongForm.Designer.cs">
+      <DependentUpon>addSongForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addSongForm.resx">
+      <DependentUpon>addSongForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
