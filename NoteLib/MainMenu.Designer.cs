@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fetchButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,7 +56,6 @@
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +63,6 @@
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.flowLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // fetchButton
@@ -70,7 +70,7 @@
             this.fetchButton.FlatAppearance.BorderSize = 0;
             this.fetchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
             this.fetchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fetchButton.Font = new System.Drawing.Font("Sitka Small", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fetchButton.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fetchButton.ForeColor = System.Drawing.Color.White;
             this.fetchButton.Location = new System.Drawing.Point(0, 73);
             this.fetchButton.Margin = new System.Windows.Forms.Padding(0);
@@ -102,7 +102,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 840);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 685);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // flowLayoutPanel3
@@ -110,6 +110,7 @@
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.Orange;
             this.flowLayoutPanel3.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel3.Controls.Add(this.label1);
+            this.flowLayoutPanel3.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
@@ -120,9 +121,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -133,11 +136,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ESSTIXFifteen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 53);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 50, 0);
+            this.label1.Font = new System.Drawing.Font("Mistral", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(56, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 55, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.Size = new System.Drawing.Size(67, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "NoteLib";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragZone);
@@ -146,7 +149,7 @@
             // 
             this.fetchSongs.FlatAppearance.BorderSize = 0;
             this.fetchSongs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fetchSongs.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.fetchSongs.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fetchSongs.ForeColor = System.Drawing.Color.DarkGray;
             this.fetchSongs.Location = new System.Drawing.Point(0, 129);
             this.fetchSongs.Margin = new System.Windows.Forms.Padding(0);
@@ -164,7 +167,7 @@
             // 
             this.fetchArtists.FlatAppearance.BorderSize = 0;
             this.fetchArtists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fetchArtists.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.fetchArtists.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fetchArtists.ForeColor = System.Drawing.Color.DarkGray;
             this.fetchArtists.Location = new System.Drawing.Point(0, 185);
             this.fetchArtists.Margin = new System.Windows.Forms.Padding(0);
@@ -182,7 +185,7 @@
             // 
             this.fetchGenres.FlatAppearance.BorderSize = 0;
             this.fetchGenres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fetchGenres.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.fetchGenres.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fetchGenres.ForeColor = System.Drawing.Color.DarkGray;
             this.fetchGenres.Location = new System.Drawing.Point(0, 241);
             this.fetchGenres.Margin = new System.Windows.Forms.Padding(0);
@@ -200,7 +203,7 @@
             // 
             this.searchButton.FlatAppearance.BorderSize = 0;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.searchButton.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.White;
             this.searchButton.Location = new System.Drawing.Point(0, 297);
             this.searchButton.Margin = new System.Windows.Forms.Padding(0);
@@ -215,7 +218,7 @@
             // 
             this.searchByLength.FlatAppearance.BorderSize = 0;
             this.searchByLength.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchByLength.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.searchByLength.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchByLength.ForeColor = System.Drawing.Color.DarkGray;
             this.searchByLength.Location = new System.Drawing.Point(0, 353);
             this.searchByLength.Margin = new System.Windows.Forms.Padding(0);
@@ -233,7 +236,7 @@
             // 
             this.searchByArtist.FlatAppearance.BorderSize = 0;
             this.searchByArtist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchByArtist.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.searchByArtist.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchByArtist.ForeColor = System.Drawing.Color.DarkGray;
             this.searchByArtist.Location = new System.Drawing.Point(0, 409);
             this.searchByArtist.Margin = new System.Windows.Forms.Padding(0);
@@ -245,12 +248,13 @@
             this.searchByArtist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.searchByArtist.UseVisualStyleBackColor = true;
             this.searchByArtist.Visible = false;
+            this.searchByArtist.Click += new System.EventHandler(this.searchByArtist_Click);
             // 
             // searchByYear
             // 
             this.searchByYear.FlatAppearance.BorderSize = 0;
             this.searchByYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchByYear.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.searchByYear.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchByYear.ForeColor = System.Drawing.Color.DarkGray;
             this.searchByYear.Location = new System.Drawing.Point(0, 465);
             this.searchByYear.Margin = new System.Windows.Forms.Padding(0);
@@ -262,12 +266,13 @@
             this.searchByYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.searchByYear.UseVisualStyleBackColor = true;
             this.searchByYear.Visible = false;
+            this.searchByYear.Click += new System.EventHandler(this.searchByYear_Click);
             // 
             // searchByGenre
             // 
             this.searchByGenre.FlatAppearance.BorderSize = 0;
             this.searchByGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchByGenre.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.searchByGenre.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchByGenre.ForeColor = System.Drawing.Color.DarkGray;
             this.searchByGenre.Location = new System.Drawing.Point(0, 521);
             this.searchByGenre.Margin = new System.Windows.Forms.Padding(0);
@@ -279,12 +284,13 @@
             this.searchByGenre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.searchByGenre.UseVisualStyleBackColor = true;
             this.searchByGenre.Visible = false;
+            this.searchByGenre.Click += new System.EventHandler(this.searchByGenre_Click);
             // 
             // addButton
             // 
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.addButton.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.White;
             this.addButton.Location = new System.Drawing.Point(0, 577);
             this.addButton.Margin = new System.Windows.Forms.Padding(0);
@@ -299,7 +305,7 @@
             // 
             this.addSong.FlatAppearance.BorderSize = 0;
             this.addSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addSong.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.addSong.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addSong.ForeColor = System.Drawing.Color.DarkGray;
             this.addSong.Location = new System.Drawing.Point(0, 633);
             this.addSong.Margin = new System.Windows.Forms.Padding(0);
@@ -317,7 +323,7 @@
             // 
             this.addArtist.FlatAppearance.BorderSize = 0;
             this.addArtist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addArtist.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.addArtist.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addArtist.ForeColor = System.Drawing.Color.DarkGray;
             this.addArtist.Location = new System.Drawing.Point(0, 689);
             this.addArtist.Margin = new System.Windows.Forms.Padding(0);
@@ -335,7 +341,7 @@
             // 
             this.addGenre.FlatAppearance.BorderSize = 0;
             this.addGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addGenre.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.addGenre.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addGenre.ForeColor = System.Drawing.Color.DarkGray;
             this.addGenre.Location = new System.Drawing.Point(0, 745);
             this.addGenre.Margin = new System.Windows.Forms.Padding(0);
@@ -353,7 +359,7 @@
             // 
             this.addAlbum.FlatAppearance.BorderSize = 0;
             this.addAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addAlbum.Font = new System.Drawing.Font("Sitka Small", 20.25F);
+            this.addAlbum.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addAlbum.ForeColor = System.Drawing.Color.DarkGray;
             this.addAlbum.Location = new System.Drawing.Point(0, 801);
             this.addAlbum.Margin = new System.Windows.Forms.Padding(0);
@@ -392,7 +398,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(178, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(729, 73);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(600, 73);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // flowLayoutPanel5
@@ -401,7 +407,7 @@
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(514, 67);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(385, 67);
             this.flowLayoutPanel5.TabIndex = 1;
             // 
             // label2
@@ -422,7 +428,7 @@
             this.flowLayoutPanel7.Controls.Add(this.button1);
             this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(523, 3);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(394, 3);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(199, 67);
             this.flowLayoutPanel7.TabIndex = 1;
@@ -448,28 +454,42 @@
             this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolTip;
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DimGray;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 35);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(30, 35, 0, 35);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridView1.Location = new System.Drawing.Point(178, 73);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(652, 525);
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 44;
+            this.dataGridView1.Size = new System.Drawing.Size(600, 612);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel4.Controls.Add(this.dataGridView1);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(178, 73);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(729, 767);
-            this.flowLayoutPanel4.TabIndex = 4;
             // 
             // MainMenu
             // 
@@ -477,8 +497,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(907, 840);
-            this.Controls.Add(this.flowLayoutPanel4);
+            this.ClientSize = new System.Drawing.Size(778, 685);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -494,7 +514,6 @@
             this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.flowLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -526,7 +545,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
     }
 }
 

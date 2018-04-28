@@ -27,6 +27,8 @@ namespace NoteLib
         {
             Database = new DbHandle();
             InitializeComponent();
+            this.BackColor = Color.Lime;
+            this.TransparencyKey = Color.Lime;
         }
 
         private void dragZone(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -81,7 +83,15 @@ namespace NoteLib
 
         private void searchByLength_Click(object sender, EventArgs e)
         {
-
+            searchGenerics frm = new searchGenerics(1);
+            frm.ShowDialog();
+            string par = frm.searchPar;
+            if(par == "GT")
+                dataGridView1.DataSource = Database.sqlProcedureQuery("P_FETCH_SONGS_BY_LENGTH_GT", "length", SqlDbType.Int, frm.searchVal);
+            if(par == "LT")
+                dataGridView1.DataSource = Database.sqlProcedureQuery("P_FETCH_SONGS_BY_LENGTH_LT", "length", SqlDbType.Int, frm.searchVal);
+            if(par == "EQ")
+                dataGridView1.DataSource = Database.sqlProcedureQuery("P_FETCH_SONGS_BY_LENGTH_EQ", "length", SqlDbType.Int, frm.searchVal);
         }
 
         private void addGenre_Click(object sender, EventArgs e)
@@ -151,6 +161,30 @@ namespace NoteLib
         private void button1_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("About : \n Designed and made by: Daniel Ivanov & CO. (2018) \n TU-Varna SIT 2015-2019");
+        }
+
+        private void searchByArtist_Click(object sender, EventArgs e)
+        {
+            searchGenerics frm = new searchGenerics(2);
+            frm.ShowDialog();
+            if (frm.searchVal != null)
+                dataGridView1.DataSource = Database.sqlProcedureQuery("P_FETCH_SONGS_BY_ARTIST", "artistid", SqlDbType.Int, frm.searchVal);
+        }
+
+        private void searchByYear_Click(object sender, EventArgs e)
+        {
+            searchGenerics frm = new searchGenerics(3);
+            frm.ShowDialog();
+            if (frm.searchVal != null)
+                dataGridView1.DataSource = Database.sqlProcedureQuery("P_FETCH_SONGS_BY_YEAR", "year", SqlDbType.Int, frm.searchVal);
+        }
+
+        private void searchByGenre_Click(object sender, EventArgs e)
+        {
+            searchGenerics frm = new searchGenerics(4);
+            frm.ShowDialog();
+            if(frm.searchVal != null)
+                dataGridView1.DataSource = Database.sqlProcedureQuery("P_FETCH_SONGS_BY_GENRE", "genre_id", SqlDbType.Int, frm.searchVal);
         }
     }
 }

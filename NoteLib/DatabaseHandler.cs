@@ -59,7 +59,16 @@ namespace NoteLib
             sqladpAdap.Fill(dtResTable);
             return dtResTable;
         }
-
+        public DataTable sqlProcedureQuery(string Querry, string parm, SqlDbType type, string val)
+        {
+            DataTable dtResTable = new DataTable();
+            SqlCommand sqlcComm = new SqlCommand(Querry, sqlConn);
+            sqlcComm.CommandType = CommandType.StoredProcedure;
+            sqlcComm.Parameters.Add(parm, type).Value = val;
+            SqlDataAdapter sqladpAdap = new SqlDataAdapter(sqlcComm);
+            sqladpAdap.Fill(dtResTable);
+            return dtResTable;
+        }
         public void insertSong(string name, int length, int genreID, int artistID, int year, int albumID)
         {
             SqlCommand sqlcComm = new SqlCommand("P_Insert_Song", sqlConn);

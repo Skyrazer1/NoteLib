@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="searchGenerics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchGenerics.Designer.cs">
+      <DependentUpon>searchGenerics.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addSongForm.resx">
       <DependentUpon>addSongForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +106,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="searchGenerics.resx">
+      <DependentUpon>searchGenerics.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,11 +141,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NoteLibrary.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="NoteLibrary_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>NoteLibrary.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
