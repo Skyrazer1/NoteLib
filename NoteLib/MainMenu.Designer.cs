@@ -33,9 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fetchButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.fetchSongs = new System.Windows.Forms.Button();
             this.fetchArtists = new System.Windows.Forms.Button();
             this.fetchGenres = new System.Windows.Forms.Button();
@@ -54,6 +51,9 @@
             this.removeArtist = new System.Windows.Forms.Button();
             this.removeGenre = new System.Windows.Forms.Button();
             this.removeAlbum = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
@@ -115,47 +115,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 576);
             this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Orange;
-            this.flowLayoutPanel3.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel3.Controls.Add(this.label1);
-            this.flowLayoutPanel3.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(178, 73);
-            this.flowLayoutPanel3.TabIndex = 4;
-            this.flowLayoutPanel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragZone);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragZone);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mistral", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(56, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 55, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NoteLib";
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragZone);
             // 
             // fetchSongs
             // 
@@ -471,6 +430,47 @@
             this.removeAlbum.UseVisualStyleBackColor = true;
             this.removeAlbum.Visible = false;
             this.removeAlbum.Click += new System.EventHandler(this.removeAlbum_Click);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Orange;
+            this.flowLayoutPanel3.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel3.Controls.Add(this.label1);
+            this.flowLayoutPanel3.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(178, 73);
+            this.flowLayoutPanel3.TabIndex = 4;
+            this.flowLayoutPanel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragZone);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(178, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragZone);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Mistral", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(56, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 55, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "NoteLib";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragZone);
             // 
             // exitButton
             // 
