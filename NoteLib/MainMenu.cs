@@ -110,10 +110,27 @@ namespace NoteLib
         {
             if (addSong.Visible == false)
             {
+                flowLayoutPanel1.VerticalScroll.Visible = false;
+                flowLayoutPanel1.HorizontalScroll.Visible = false;
                 addArtist.Visible = true;
                 addGenre.Visible = true;
                 addAlbum.Visible = true;
                 addSong.Visible = true;
+
+
+                removeArtist.Visible = false;
+                removeGenre.Visible = false;
+                removeAlbum.Visible = false;
+                removeSong.Visible = false;
+
+                fetchArtists.Visible = false;
+                fetchGenres.Visible = false;
+                fetchSongs.Visible = false;
+
+                searchByArtist.Visible = false;
+                searchByGenre.Visible = false;
+                searchByLength.Visible = false;
+                searchByYear.Visible = false;
             }
             else
             {
@@ -128,10 +145,26 @@ namespace NoteLib
         {
             if(searchByArtist.Visible == false)
             {
+                flowLayoutPanel1.VerticalScroll.Visible = false;
+                flowLayoutPanel1.HorizontalScroll.Visible = false;
                 searchByArtist.Visible = true;
                 searchByGenre.Visible = true;
                 searchByLength.Visible = true;
                 searchByYear.Visible = true;
+
+                addArtist.Visible = false;
+                addGenre.Visible = false;
+                addAlbum.Visible = false;
+                addSong.Visible = false;
+
+                removeArtist.Visible = false;
+                removeGenre.Visible = false;
+                removeAlbum.Visible = false;
+                removeSong.Visible = false;
+
+                fetchArtists.Visible = false;
+                fetchGenres.Visible = false;
+                fetchSongs.Visible = false;
             }
             else
             {
@@ -146,9 +179,26 @@ namespace NoteLib
         {
             if (fetchArtists.Visible == false)
             {
+                flowLayoutPanel1.VerticalScroll.Visible = false;
+                flowLayoutPanel1.HorizontalScroll.Visible = false;
                 fetchArtists.Visible = true;
                 fetchGenres.Visible = true;
                 fetchSongs.Visible = true;
+
+                searchByArtist.Visible = false;
+                searchByGenre.Visible = false;
+                searchByLength.Visible = false;
+                searchByYear.Visible = false;
+
+                addArtist.Visible = false;
+                addGenre.Visible = false;
+                addAlbum.Visible = false;
+                addSong.Visible = false;
+
+                removeArtist.Visible = false;
+                removeGenre.Visible = false;
+                removeAlbum.Visible = false;
+                removeSong.Visible = false;
             }
             else
             {
@@ -189,32 +239,52 @@ namespace NoteLib
 
         private void removeAlbum_Click(object sender, EventArgs e)
         {
-
+            searchGenerics frm = new searchGenerics(7);
+            frm.ShowDialog();
         }
 
         private void removeGenre_Click(object sender, EventArgs e)
         {
-
+            searchGenerics frm = new searchGenerics(8);
+            frm.ShowDialog();
         }
 
         private void removeArtist_Click(object sender, EventArgs e)
         {
-
+            searchGenerics frm = new searchGenerics(6);
+            frm.ShowDialog();
         }
 
         private void removeSong_Click(object sender, EventArgs e)
         {
-
+            searchGenerics frm = new searchGenerics(5);
+            frm.ShowDialog();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
             if (removeArtist.Visible == false)
             {
+                flowLayoutPanel1.VerticalScroll.Visible = false;
+                flowLayoutPanel1.HorizontalScroll.Visible = false;
                 removeArtist.Visible = true;
                 removeGenre.Visible = true;
                 removeAlbum.Visible = true;
                 removeSong.Visible = true;
+
+                searchByArtist.Visible = false;
+                searchByGenre.Visible = false;
+                searchByLength.Visible = false;
+                searchByYear.Visible = false;
+
+                addArtist.Visible = false;
+                addGenre.Visible = false;
+                addAlbum.Visible = false;
+                addSong.Visible = false;
+
+                fetchArtists.Visible = false;
+                fetchGenres.Visible = false;
+                fetchSongs.Visible = false;
             }
             else
             {

@@ -52,30 +52,33 @@ namespace NoteLib
             dt = DateTime.Parse(strTmp);
             int length = dt.Minute*60;
             length += dt.Second;
-            try
+            if (songName.Text.ToString().Length != 0 && length != 0)
             {
-                if (albumCombo.SelectedValue != null)
-                    Db.insertSong(
-                        songName.Text.ToString(),
-                        length,
-                        int.Parse(genreCombo.SelectedValue.ToString()),
-                        int.Parse(artistCombo.SelectedValue.ToString()),
-                        int.Parse(songYear.Text.ToString()),
-                        int.Parse(albumCombo.SelectedValue.ToString()));
-                else
-                    Db.insertSong(
-                     songName.Text.ToString(),
-                     length,
-                     int.Parse(genreCombo.SelectedValue.ToString()),
-                     int.Parse(artistCombo.SelectedValue.ToString()),
-                     int.Parse(songYear.Text.ToString()));
+                try
+                {
+                    if (albumCombo.SelectedValue != null)
+                        Db.insertSong(
+                            songName.Text.ToString(),
+                            length,
+                            int.Parse(genreCombo.SelectedValue.ToString()),
+                            int.Parse(artistCombo.SelectedValue.ToString()),
+                            int.Parse(songYear.Text.ToString()),
+                            int.Parse(albumCombo.SelectedValue.ToString()));
+                    else
+                        Db.insertSong(
+                         songName.Text.ToString(),
+                         length,
+                         int.Parse(genreCombo.SelectedValue.ToString()),
+                         int.Parse(artistCombo.SelectedValue.ToString()),
+                         int.Parse(songYear.Text.ToString()));
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message.ToString());
+                }
+                Db.dbDestroy();
+                this.Close();
             }
-            catch(Exception Ex)
-            {
-                MessageBox.Show(Ex.Message.ToString());
-            }
-            Db.dbDestroy();
-
         }
 
         private void addSongForm_Load(object sender, EventArgs e)

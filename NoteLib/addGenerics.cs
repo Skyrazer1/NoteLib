@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace NoteLib
 {
@@ -14,6 +15,25 @@ namespace NoteLib
     {
         int mode;
         DbHandle Db = new DbHandle();
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd,
+                         int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void dragZone(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
         public addGenerics(int md)
         {
             mode = md;
@@ -53,15 +73,32 @@ namespace NoteLib
         {
             if(mode == 1)
             {
-                Db.insertGeneric("P_INSERT_ARTIST", "name", SqlDbType.VarChar, mainField.Text.ToString());
+                if (mainField.Text.ToString().Length != 0)
+                {
+                    Db.insertGeneric("P_INSERT_ARTIST", "name", SqlDbType.VarChar, mainField.Text.ToString());
+                    Db.dbDestroy();
+                    this.Close();
+                }
             }
             if(mode == 2)
             {
-                Db.insertGeneric("P_INSERT_GENRE", "name", SqlDbType.VarChar, mainField.Text.ToString());
+                if (mainField.Text.ToString().Length != 0)
+                {
+                    Db.insertGeneric("P_INSERT_GENRE", "name", SqlDbType.VarChar, mainField.Text.ToString());
+                    Db.dbDestroy();
+                    this.Close();
+                }
+                
             }
             if(mode == 3)
             {
-                Db.insertGeneric("P_INSERT_ALBUM", "name", SqlDbType.VarChar, mainField.Text.ToString(), "ARTIST_ID", SqlDbType.Int, comboBox1.SelectedValue.ToString());
+                if (mainField.Text.ToString().Length != 0)
+                {
+                    Db.insertGeneric("P_INSERT_ALBUM", "name", SqlDbType.VarChar, mainField.Text.ToString(), "ARTIST_ID", SqlDbType.Int, comboBox1.SelectedValue.ToString());
+                    Db.dbDestroy();
+                    this.Close();
+                }
+               
             }
         }
     }

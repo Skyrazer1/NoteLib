@@ -53,7 +53,7 @@ namespace NoteLib
                 {
                     case 1:
                         {
-                            //by length
+                            //Search by length
                             label1.Visible = true;
                             label1.Text = "Searching by Song Length :";
                             numericUpDown1.Visible = true;
@@ -66,7 +66,7 @@ namespace NoteLib
                         }
                     case 2:
                         {
-                            //by artist
+                            //Search by artist
                             label1.Visible = true;
                             label1.Text = "Searching by Song Artist :";
                             searchCombo.Visible = true;
@@ -77,7 +77,7 @@ namespace NoteLib
                         }
                     case 3:
                         {
-                            // by year
+                            //Search by year
                             label1.Visible = true;
                             label1.Text = "Searching by Song Year :";
                             searchCombo.Visible = true;
@@ -88,9 +88,53 @@ namespace NoteLib
                         }
                     case 4:
                         {
-                            //by genre
+                            //Search by genre
                             label1.Visible = true;
                             label1.Text = "Searching by Song Genre :";
+                            searchCombo.Visible = true;
+                            searchCombo.ValueMember = "Id";
+                            searchCombo.DisplayMember = "GENRE_NAME";
+                            searchCombo.DataSource = db.sqlCustomQuery("SELECT * FROM GenreTb");
+                            break;
+                        }
+                    case 5:
+                        {
+                            //Delete Song
+                            label1.Visible = true;
+                            label1.Text = "Delete Song :";
+                            searchCombo.Visible = true;
+                            searchCombo.ValueMember = "Id";
+                            searchCombo.DisplayMember = "SONG_NAME";
+                            searchCombo.DataSource = db.sqlCustomQuery("SELECT * FROM SongListTb");
+                            break;
+                        }
+                    case 6:
+                        {
+                            //Delete Artist
+                            label1.Visible = true;
+                            label1.Text = "Delete Artist :";
+                            searchCombo.Visible = true;
+                            searchCombo.ValueMember = "Id";
+                            searchCombo.DisplayMember = "ARTIST_NAME";
+                            searchCombo.DataSource = db.sqlCustomQuery("SELECT * FROM ArtistTb");
+                            break;
+                        }
+                    case 7:
+                        {
+                            //Delete Album
+                            label1.Visible = true;
+                            label1.Text = "Delete Album :";
+                            searchCombo.Visible = true;
+                            searchCombo.ValueMember = "Id";
+                            searchCombo.DisplayMember = "ALBUM_NAME";
+                            searchCombo.DataSource = db.sqlCustomQuery("SELECT * FROM AlbumTb");
+                            break;
+                        }
+                    case 8:
+                        {
+                            //Delete Genre 
+                            label1.Visible = true;
+                            label1.Text = "Delete Genre :";
                             searchCombo.Visible = true;
                             searchCombo.ValueMember = "Id";
                             searchCombo.DisplayMember = "GENRE_NAME";
@@ -146,6 +190,54 @@ namespace NoteLib
                         //by genre
                         searchVal = searchCombo.SelectedValue.ToString();
                         this.Close();
+                        break;
+                    }
+                case 5:
+                    {
+                        //delete song
+                        db.sqlProcedureQuery("P_DELETE_SONG", "songid", SqlDbType.Int, searchCombo.SelectedValue.ToString());
+                        db.dbDestroy();
+                        this.Close();
+                        break;
+                    }
+                case 6:
+                    {
+                        //delete artist
+                        if (db.sqlProcedureQuery("P_FETCH_SONGS_BY_ARTIST","artistid", SqlDbType.Int, searchCombo.SelectedValue.ToString()).Rows.Count == 0 &&
+                            db.sqlCustomQuery("SELECT * FROM AlbumTb WHERE ARTIST_ID = " + searchCombo.SelectedValue.ToString()).Rows.Count == 0)
+                        {
+                            db.sqlProcedureQuery("P_DELETE_ARTIST", "artistid", SqlDbType.Int, searchCombo.SelectedValue.ToString());
+                            db.dbDestroy();
+                            this.Close();
+                        }
+                        else
+                            MessageBox.Show("Cannot delete Artist! There are song or album entries who depend on this.");
+                        break;
+                    }
+                case  7:
+                    {
+                        //delete Album
+                        if (db.sqlCustomQuery("SELECT * FROM SongListTb WHERE ALBUM_ID = " + searchCombo.SelectedValue.ToString()).Rows.Count == 0)
+                        {
+                            db.sqlProcedureQuery("P_DELETE_ALBUM", "albumid", SqlDbType.Int, searchCombo.SelectedValue.ToString());
+                            db.dbDestroy();
+                            this.Close();
+                        }
+                        else
+                            MessageBox.Show("Album can not be deleted! It has dependencies in a song entry.");
+                        break;
+                    }
+                case 8:
+                    {
+                        //delete genre
+                        if (db.sqlCustomQuery("SELECT * FROM SongListTb WHERE SONG_GENRE_ID = " + searchCombo.SelectedValue.ToString()).Rows.Count == 0)
+                        {
+                            db.sqlProcedureQuery("P_DELETE_GENRE", "genreid", SqlDbType.Int, searchCombo.SelectedValue.ToString());
+                            db.dbDestroy();
+                            this.Close();
+                        }
+                        else
+                            MessageBox.Show("Genre can not be deleted! It has dependencies in a song entry.");
                         break;
                     }
             }
