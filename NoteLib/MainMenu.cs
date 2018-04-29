@@ -186,5 +186,43 @@ namespace NoteLib
             if(frm.searchVal != null)
                 dataGridView1.DataSource = Database.sqlProcedureQuery("P_FETCH_SONGS_BY_GENRE", "genre_id", SqlDbType.Int, frm.searchVal);
         }
+
+        private void removeAlbum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeGenre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeArtist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeSong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            if (removeArtist.Visible == false)
+            {
+                removeArtist.Visible = true;
+                removeGenre.Visible = true;
+                removeAlbum.Visible = true;
+                removeSong.Visible = true;
+            }
+            else
+            {
+                removeArtist.Visible = false;
+                removeGenre.Visible = false;
+                removeAlbum.Visible = false;
+                removeSong.Visible = false;
+            }
+        }
     }
 }

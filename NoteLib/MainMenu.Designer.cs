@@ -56,6 +56,11 @@
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.removeSong = new System.Windows.Forms.Button();
+            this.removeArtist = new System.Windows.Forms.Button();
+            this.removeGenre = new System.Windows.Forms.Button();
+            this.removeAlbum = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,10 +104,15 @@
             this.flowLayoutPanel1.Controls.Add(this.addArtist);
             this.flowLayoutPanel1.Controls.Add(this.addGenre);
             this.flowLayoutPanel1.Controls.Add(this.addAlbum);
+            this.flowLayoutPanel1.Controls.Add(this.removeButton);
+            this.flowLayoutPanel1.Controls.Add(this.removeSong);
+            this.flowLayoutPanel1.Controls.Add(this.removeArtist);
+            this.flowLayoutPanel1.Controls.Add(this.removeGenre);
+            this.flowLayoutPanel1.Controls.Add(this.removeAlbum);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 685);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 1084);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // flowLayoutPanel3
@@ -375,14 +385,15 @@
             // 
             // exitButton
             // 
+            this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitButton.ForeColor = System.Drawing.Color.Black;
-            this.exitButton.Location = new System.Drawing.Point(159, 8);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.exitButton.Location = new System.Drawing.Point(169, 8);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(0, 8, 0, 30);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(40, 50);
+            this.exitButton.Size = new System.Drawing.Size(40, 47);
             this.exitButton.TabIndex = 8;
             this.exitButton.Text = "X";
             this.exitButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -426,23 +437,24 @@
             // 
             this.flowLayoutPanel7.Controls.Add(this.exitButton);
             this.flowLayoutPanel7.Controls.Add(this.button1);
-            this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(394, 3);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(391, 0);
+            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(199, 67);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(209, 70);
             this.flowLayoutPanel7.TabIndex = 1;
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(119, 8);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.button1.Location = new System.Drawing.Point(129, 8);
+            this.button1.Margin = new System.Windows.Forms.Padding(0, 8, 0, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 50);
+            this.button1.Size = new System.Drawing.Size(40, 47);
             this.button1.TabIndex = 9;
             this.button1.Text = "?";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -488,8 +500,95 @@
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 44;
-            this.dataGridView1.Size = new System.Drawing.Size(600, 612);
+            this.dataGridView1.Size = new System.Drawing.Size(600, 1011);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // removeButton
+            // 
+            this.removeButton.FlatAppearance.BorderSize = 0;
+            this.removeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeButton.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeButton.ForeColor = System.Drawing.Color.White;
+            this.removeButton.Location = new System.Drawing.Point(0, 857);
+            this.removeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(178, 56);
+            this.removeButton.TabIndex = 19;
+            this.removeButton.Text = "Remove...";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
+            // removeSong
+            // 
+            this.removeSong.FlatAppearance.BorderSize = 0;
+            this.removeSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeSong.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeSong.ForeColor = System.Drawing.Color.DarkGray;
+            this.removeSong.Location = new System.Drawing.Point(0, 913);
+            this.removeSong.Margin = new System.Windows.Forms.Padding(0);
+            this.removeSong.Name = "removeSong";
+            this.removeSong.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.removeSong.Size = new System.Drawing.Size(178, 56);
+            this.removeSong.TabIndex = 20;
+            this.removeSong.Text = "Song";
+            this.removeSong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.removeSong.UseVisualStyleBackColor = true;
+            this.removeSong.Visible = false;
+            this.removeSong.Click += new System.EventHandler(this.removeSong_Click);
+            // 
+            // removeArtist
+            // 
+            this.removeArtist.FlatAppearance.BorderSize = 0;
+            this.removeArtist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeArtist.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeArtist.ForeColor = System.Drawing.Color.DarkGray;
+            this.removeArtist.Location = new System.Drawing.Point(0, 969);
+            this.removeArtist.Margin = new System.Windows.Forms.Padding(0);
+            this.removeArtist.Name = "removeArtist";
+            this.removeArtist.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.removeArtist.Size = new System.Drawing.Size(178, 56);
+            this.removeArtist.TabIndex = 21;
+            this.removeArtist.Text = "Artist";
+            this.removeArtist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.removeArtist.UseVisualStyleBackColor = true;
+            this.removeArtist.Visible = false;
+            this.removeArtist.Click += new System.EventHandler(this.removeArtist_Click);
+            // 
+            // removeGenre
+            // 
+            this.removeGenre.FlatAppearance.BorderSize = 0;
+            this.removeGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeGenre.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeGenre.ForeColor = System.Drawing.Color.DarkGray;
+            this.removeGenre.Location = new System.Drawing.Point(0, 1025);
+            this.removeGenre.Margin = new System.Windows.Forms.Padding(0);
+            this.removeGenre.Name = "removeGenre";
+            this.removeGenre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.removeGenre.Size = new System.Drawing.Size(178, 56);
+            this.removeGenre.TabIndex = 22;
+            this.removeGenre.Text = "Genre";
+            this.removeGenre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.removeGenre.UseVisualStyleBackColor = true;
+            this.removeGenre.Visible = false;
+            this.removeGenre.Click += new System.EventHandler(this.removeGenre_Click);
+            // 
+            // removeAlbum
+            // 
+            this.removeAlbum.FlatAppearance.BorderSize = 0;
+            this.removeAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeAlbum.Font = new System.Drawing.Font("Helonia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeAlbum.ForeColor = System.Drawing.Color.DarkGray;
+            this.removeAlbum.Location = new System.Drawing.Point(0, 1081);
+            this.removeAlbum.Margin = new System.Windows.Forms.Padding(0);
+            this.removeAlbum.Name = "removeAlbum";
+            this.removeAlbum.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.removeAlbum.Size = new System.Drawing.Size(178, 56);
+            this.removeAlbum.TabIndex = 23;
+            this.removeAlbum.Text = "Album";
+            this.removeAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.removeAlbum.UseVisualStyleBackColor = true;
+            this.removeAlbum.Visible = false;
+            this.removeAlbum.Click += new System.EventHandler(this.removeAlbum_Click);
             // 
             // MainMenu
             // 
@@ -497,7 +596,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(778, 685);
+            this.ClientSize = new System.Drawing.Size(778, 1084);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -545,6 +644,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button removeSong;
+        private System.Windows.Forms.Button removeArtist;
+        private System.Windows.Forms.Button removeGenre;
+        private System.Windows.Forms.Button removeAlbum;
     }
 }
 
